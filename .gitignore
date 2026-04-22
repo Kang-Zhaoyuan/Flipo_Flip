@@ -25,3 +25,5 @@ Thumbs.db
 # 如果你不希望 GitHub 上出现那个自动生成的目录树文件，可以取消下面一行的注释
 # folder_structure.txt
 # Click_me_to_refresh_filetree.batgit rm -r --cached .
+
+*.bat
