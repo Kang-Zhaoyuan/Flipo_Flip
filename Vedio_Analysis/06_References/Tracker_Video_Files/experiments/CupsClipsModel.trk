@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object class="org.opensourcephysics.cabrillo.tracker.TrackerPanel">
+    <property name="width" type="double">320.0</property>
+    <property name="height" type="double">240.0</property>
+    <property name="magnification" type="double">-1.0</property>
+    <property name="author" type="string">Douglas Brown</property>
+    <property name="contact" type="string">dobrown@cabrillo.edu</property>
+    <property name="description" type="string"><![CDATA[This compares two theoretical models of the air resistance force: (1) a viscous model for which the force depends linearly on v (blue), and (2) a drag model for which the force depends on the square of v (red). Choose "Model..." from a model's track menu (button on Track Control) to inspect and edit its equations and parameters.
+
+Which model best fits the data for the cup with mass 5 (located in the video between the two models)? How well do the models match the motions of cups with different masses?
+
+]]></property>
+    <property name="videoclip" type="object">
+    <object class="org.opensourcephysics.media.core.VideoClip">
+        <property name="video" type="object">
+        <object class="org.opensourcephysics.media.quicktime.QTVideo">
+            <property name="path" type="string">../videos/CupsClips.mp4</property>
+        </object>
+        </property>
+        <property name="startframe" type="int">1</property>
+        <property name="stepsize" type="int">3</property>
+        <property name="stepcount" type="int">11</property>
+        <property name="starttime" type="double">0.0</property>
+    </object>
+    </property>
+    <property name="clipcontrol" type="object">
+    <object class="org.opensourcephysics.media.core.StepperClipControl">
+        <property name="rate" type="double">1.0</property>
+        <property name="delta_t" type="double">33.0</property>
+    </object>
+    </property>
+    <property name="coords" type="object">
+    <object class="org.opensourcephysics.media.core.ImageCoordSystem">
+        <property name="fixedorigin" type="boolean">true</property>
+        <property name="fixedangle" type="boolean">true</property>
+        <property name="fixedscale" type="boolean">true</property>
+        <property name="locked" type="boolean">false</property>
+        <property name="framedata" type="array" class="[Lorg.opensourcephysics.media.core.ImageCoordSystem$FrameData;">
+            <property name="[0]" type="object">
+            <object class="org.opensourcephysics.media.core.ImageCoordSystem$FrameData">
+                <property name="xorigin" type="double">169.0845070422535</property>
+                <property name="yorigin" type="double">32.53521126760563</property>
+                <property name="angle" type="double">0.0</property>
+                <property name="xscale" type="double">86.96567917715389</property>
+                <property name="yscale" type="double">86.96567917715389</property>
+            </object>
+            </property>
+        </property>
+    </object>
+    </property>
+    <property name="tracks" type="collection" class="java.util.ArrayList">
+        <property name="item" type="object">
+        <object class="org.opensourcephysics.cabrillo.tracker.CoordAxes">
+            <property name="name" type="string">axes</property>
+            <property name="footprint" type="string">Footprint.BoldSimpleAxes</property>
+            <property name="visible" type="boolean">false</property>
+            <property name="trail" type="boolean">false</property>
+        </object>
+        </property>
+        <property name="item" type="object">
+        <object class="org.opensourcephysics.cabrillo.tracker.TapeMeasure">
+            <property name="name" type="string">tape measure</property>
+            <property name="footprint" type="string">Footprint.DoubleArrow</property>
+            <property name="visible" type="boolean">false</property>
+            <property name="trail" type="boolean">false</property>
+            <property name="fixedtape" type="boolean">true</property>
+            <property name="framedata" type="array" class="[Lorg.opensourcephysics.cabrillo.tracker.TapeMeasure$FrameData;">
+                <property name="[0]" type="object">
+                <object class="org.opensourcephysics.cabrillo.tracker.TapeMeasure$FrameData">
+                    <property name="x1" type="double">119.0845070422535</property>
+                    <property name="y1" type="double">22.535211267605632</property>
+                    <property name="x2" type="double">219.0845070422535</property>
+                    <property name="y2" type="double">22.535211267605632</property>
+                </object>
+                </property>
+            </property>
+        </object>
+        </property>
+        <property name="item" type="object">
+        <object class="org.opensourcephysics.cabrillo.tracker.DynamicParticle">
+            <property name="mass" type="double">0.00234</property>
+            <property name="name" type="string">viscous force</property>
+            <property name="description" type="string">This model particle experiences a viscous force that depends linearly on its speed.</property>
+            <property name="color" type="object">
+            <object class="java.awt.Color">
+                <property name="red" type="int">0</property>
+                <property name="green" type="int">255</property>
+                <property name="blue" type="int">255</property>
+                <property name="alpha" type="int">255</property>
+            </object>
+            </property>
+            <property name="footprint" type="string">CircleFootprint.Circle_8</property>
+            <property name="visible" type="boolean">true</property>
+            <property name="trail" type="boolean">true</property>
+            <property name="locked" type="boolean">true</property>
+            <property name="user_parameters" type="array" class="[Lorg.opensourcephysics.tools.Parameter;">
+                <property name="[0]" type="object">
+                <object class="org.opensourcephysics.tools.Parameter">
+                    <property name="name" type="string">m</property>
+                    <property name="function" type="string">0.00234</property>
+                    <property name="editable" type="boolean">false</property>
+                </object>
+                </property>
+                <property name="[1]" type="object">
+                <object class="org.opensourcephysics.tools.Parameter">
+                    <property name="name" type="string">b</property>
+                    <property name="function" type="string">0.007</property>
+                    <property name="editable" type="boolean">true</property>
+                </object>
+                </property>
+                <property name="[2]" type="object">
+                <object class="org.opensourcephysics.tools.Parameter">
+                    <property name="name" type="string">g</property>
+                    <property name="function" type="string">9.8</property>
+                    <property name="editable" type="boolean">true</property>
+                </object>
+                </property>
+            </property>
+            <property name="t0" type="string">0</property>
+            <property name="inspector_x" type="int">296</property>
+            <property name="inspector_y" type="int">260</property>
+            <property name="inspector_h" type="int">440</property>
+            <property name="force x" type="string">0</property>
+            <property name="force y" type="string">-m*g - b*vy</property>
+            <property name="x" type="string">0.61</property>
+            <property name="y" type="string">-0.03</property>
+            <property name="vx" type="string">0</property>
+            <property name="vy" type="string">-0.3</property>
+            <property name="solver" type="string">org.opensourcephysics.numerics.ODEMultistepSolver</property>
+        </object>
+        </property>
+        <property name="item" type="object">
+        <object class="org.opensourcephysics.cabrillo.tracker.DynamicParticle">
+            <property name="mass" type="double">0.00234</property>
+            <property name="name" type="string">drag force</property>
+            <property name="description" type="string">This model particle experiences a drag force that depends on the square of its speed.</property>
+            <property name="color" type="object">
+            <object class="java.awt.Color">
+                <property name="red" type="int">255</property>
+                <property name="green" type="int">0</property>
+                <property name="blue" type="int">0</property>
+                <property name="alpha" type="int">255</property>
+            </object>
+            </property>
+            <property name="footprint" type="string">CircleFootprint.Circle_8</property>
+            <property name="visible" type="boolean">true</property>
+            <property name="trail" type="boolean">true</property>
+            <property name="locked" type="boolean">true</property>
+            <property name="user_parameters" type="array" class="[Lorg.opensourcephysics.tools.Parameter;">
+                <property name="[0]" type="object">
+                <object class="org.opensourcephysics.tools.Parameter">
+                    <property name="name" type="string">m</property>
+                    <property name="function" type="string">0.00234</property>
+                    <property name="editable" type="boolean">false</property>
+                </object>
+                </property>
+                <property name="[1]" type="object">
+                <object class="org.opensourcephysics.tools.Parameter">
+                    <property name="name" type="string">d</property>
+                    <property name="function" type="string">1.21</property>
+                    <property name="editable" type="boolean">true</property>
+                </object>
+                </property>
+                <property name="[2]" type="object">
+                <object class="org.opensourcephysics.tools.Parameter">
+                    <property name="name" type="string">A</property>
+                    <property name="function" type="string">0.0050</property>
+                    <property name="editable" type="boolean">true</property>
+                </object>
+                </property>
+                <property name="[3]" type="object">
+                <object class="org.opensourcephysics.tools.Parameter">
+                    <property name="name" type="string">C</property>
+                    <property name="function" type="string">0.95</property>
+                    <property name="editable" type="boolean">true</property>
+                </object>
+                </property>
+                <property name="[4]" type="object">
+                <object class="org.opensourcephysics.tools.Parameter">
+                    <property name="name" type="string">g</property>
+                    <property name="function" type="string">9.8</property>
+                    <property name="editable" type="boolean">true</property>
+                </object>
+                </property>
+            </property>
+            <property name="t0" type="string">0</property>
+            <property name="inspector_x" type="int">684</property>
+            <property name="inspector_y" type="int">260</property>
+            <property name="inspector_h" type="int">472</property>
+            <property name="force x" type="string">0</property>
+            <property name="force y" type="string">-m*g + 0.5*C*d*A*vy^2</property>
+            <property name="x" type="string">0.76</property>
+            <property name="y" type="string">-0.03</property>
+            <property name="vx" type="string">0</property>
+            <property name="vy" type="string">-0.3</property>
+            <property name="solver" type="string">org.opensourcephysics.numerics.ODEMultistepSolver</property>
+        </object>
+        </property>
+    </property>
+    <property name="dividers" type="array" class="[D">
+        <property name="array" type="string">{0.7178257394084733,0.5015625,1.0,0.0}</property>
+    </property>
+    <property name="views" type="array" class="[[Lorg.opensourcephysics.cabrillo.tracker.TView;">
+        <property name="[0]" type="array" class="[Lorg.opensourcephysics.cabrillo.tracker.TView;">
+            <property name="[1]" type="object">
+            <object class="org.opensourcephysics.cabrillo.tracker.PlotTView">
+                <property name="selected_track" type="string">viscous force</property>
+                <property name="track_views" type="collection" class="java.util.ArrayList">
+                    <property name="item" type="object">
+                    <object class="org.opensourcephysics.cabrillo.tracker.PlotTrackView">
+                        <property name="track" type="string">viscous force</property>
+                        <property name="plot0" type="object">
+                        <object class="org.opensourcephysics.cabrillo.tracker.TrackPlottingPanel">
+                            <property name="x_var" type="string">t</property>
+                            <property name="y_var" type="string">vy</property>
+                        </object>
+                        </property>
+                    </object>
+                    </property>
+                    <property name="item" type="object">
+                    <object class="org.opensourcephysics.cabrillo.tracker.PlotTrackView">
+                        <property name="track" type="string">drag force</property>
+                        <property name="plot0" type="object">
+                        <object class="org.opensourcephysics.cabrillo.tracker.TrackPlottingPanel">
+                            <property name="x_var" type="string">t</property>
+                            <property name="y_var" type="string">x</property>
+                        </object>
+                        </property>
+                    </object>
+                    </property>
+                </property>
+            </object>
+            </property>
+            <property name="[2]" type="object">
+            <object class="org.opensourcephysics.cabrillo.tracker.TableTView">
+                <property name="selected_track" type="string">viscous force</property>
+                <property name="track_columns" type="array" class="[[Ljava.lang.String;">
+                    <property name="[0]" type="array" class="[Ljava.lang.String;">
+                        <property name="[0]" type="string">viscous force</property>
+                        <property name="[1]" type="string">x</property>
+                        <property name="[2]" type="string">y</property>
+                    </property>
+                    <property name="[1]" type="array" class="[Ljava.lang.String;">
+                        <property name="[0]" type="string">drag force</property>
+                        <property name="[1]" type="string">x</property>
+                        <property name="[2]" type="string">y</property>
+                    </property>
+                </property>
+            </object>
+            </property>
+        </property>
+        <property name="[1]" type="array" class="[Lorg.opensourcephysics.cabrillo.tracker.TView;">
+            <property name="[1]" type="object">
+            <object class="org.opensourcephysics.cabrillo.tracker.PlotTView">
+                <property name="selected_track" type="string">drag force</property>
+                <property name="track_views" type="collection" class="java.util.ArrayList">
+                    <property name="item" type="object">
+                    <object class="org.opensourcephysics.cabrillo.tracker.PlotTrackView">
+                        <property name="track" type="string">viscous force</property>
+                        <property name="plot0" type="object">
+                        <object class="org.opensourcephysics.cabrillo.tracker.TrackPlottingPanel">
+                            <property name="x_var" type="string">t</property>
+                            <property name="y_var" type="string">x</property>
+                        </object>
+                        </property>
+                    </object>
+                    </property>
+                    <property name="item" type="object">
+                    <object class="org.opensourcephysics.cabrillo.tracker.PlotTrackView">
+                        <property name="track" type="string">drag force</property>
+                        <property name="plot0" type="object">
+                        <object class="org.opensourcephysics.cabrillo.tracker.TrackPlottingPanel">
+                            <property name="x_var" type="string">t</property>
+                            <property name="y_var" type="string">vy</property>
+                        </object>
+                        </property>
+                    </object>
+                    </property>
+                </property>
+            </object>
+            </property>
+            <property name="[2]" type="object">
+            <object class="org.opensourcephysics.cabrillo.tracker.TableTView">
+                <property name="selected_track" type="string">viscous force</property>
+                <property name="track_columns" type="array" class="[[Ljava.lang.String;">
+                    <property name="[0]" type="array" class="[Ljava.lang.String;">
+                        <property name="[0]" type="string">viscous force</property>
+                        <property name="[1]" type="string">x</property>
+                        <property name="[2]" type="string">y</property>
+                    </property>
+                    <property name="[1]" type="array" class="[Ljava.lang.String;">
+                        <property name="[0]" type="string">drag force</property>
+                        <property name="[1]" type="string">x</property>
+                        <property name="[2]" type="string">y</property>
+                    </property>
+                </property>
+            </object>
+            </property>
+        </property>
+        <property name="[2]" type="array" class="[Lorg.opensourcephysics.cabrillo.tracker.TView;">
+            <property name="[1]" type="object">
+            <object class="org.opensourcephysics.cabrillo.tracker.PlotTView">
+                <property name="selected_track" type="string">viscous force</property>
+                <property name="track_views" type="collection" class="java.util.ArrayList">
+                    <property name="item" type="object">
+                    <object class="org.opensourcephysics.cabrillo.tracker.PlotTrackView">
+                        <property name="track" type="string">viscous force</property>
+                        <property name="plot0" type="object">
+                        <object class="org.opensourcephysics.cabrillo.tracker.TrackPlottingPanel">
+                            <property name="x_var" type="string">t</property>
+                            <property name="y_var" type="string">x</property>
+                        </object>
+                        </property>
+                    </object>
+                    </property>
+                    <property name="item" type="object">
+                    <object class="org.opensourcephysics.cabrillo.tracker.PlotTrackView">
+                        <property name="track" type="string">drag force</property>
+                        <property name="plot0" type="object">
+                        <object class="org.opensourcephysics.cabrillo.tracker.TrackPlottingPanel">
+                            <property name="x_var" type="string">t</property>
+                            <property name="y_var" type="string">x</property>
+                        </object>
+                        </property>
+                    </object>
+                    </property>
+                </property>
+            </object>
+            </property>
+            <property name="[2]" type="object">
+            <object class="org.opensourcephysics.cabrillo.tracker.TableTView">
+                <property name="selected_track" type="string">viscous force</property>
+                <property name="track_columns" type="array" class="[[Ljava.lang.String;">
+                    <property name="[0]" type="array" class="[Ljava.lang.String;">
+                        <property name="[0]" type="string">viscous force</property>
+                        <property name="[1]" type="string">x</property>
+                        <property name="[2]" type="string">y</property>
+                    </property>
+                    <property name="[1]" type="array" class="[Ljava.lang.String;">
+                        <property name="[0]" type="string">drag force</property>
+                        <property name="[1]" type="string">x</property>
+                        <property name="[2]" type="string">y</property>
+                    </property>
+                </property>
+            </object>
+            </property>
+        </property>
+        <property name="[3]" type="array" class="[Lorg.opensourcephysics.cabrillo.tracker.TView;">
+            <property name="[1]" type="object">
+            <object class="org.opensourcephysics.cabrillo.tracker.PlotTView">
+                <property name="selected_track" type="string">viscous force</property>
+                <property name="track_views" type="collection" class="java.util.ArrayList">
+                    <property name="item" type="object">
+                    <object class="org.opensourcephysics.cabrillo.tracker.PlotTrackView">
+                        <property name="track" type="string">viscous force</property>
+                        <property name="plot0" type="object">
+                        <object class="org.opensourcephysics.cabrillo.tracker.TrackPlottingPanel">
+                            <property name="x_var" type="string">t</property>
+                            <property name="y_var" type="string">x</property>
+                        </object>
+                        </property>
+                    </object>
+                    </property>
+                    <property name="item" type="object">
+                    <object class="org.opensourcephysics.cabrillo.tracker.PlotTrackView">
+                        <property name="track" type="string">drag force</property>
+                        <property name="plot0" type="object">
+                        <object class="org.opensourcephysics.cabrillo.tracker.TrackPlottingPanel">
+                            <property name="x_var" type="string">t</property>
+                            <property name="y_var" type="string">x</property>
+                        </object>
+                        </property>
+                    </object>
+                    </property>
+                </property>
+            </object>
+            </property>
+            <property name="[2]" type="object">
+            <object class="org.opensourcephysics.cabrillo.tracker.TableTView">
+                <property name="selected_track" type="string">viscous force</property>
+                <property name="track_columns" type="array" class="[[Ljava.lang.String;">
+                    <property name="[0]" type="array" class="[Ljava.lang.String;">
+                        <property name="[0]" type="string">viscous force</property>
+                        <property name="[1]" type="string">x</property>
+                        <property name="[2]" type="string">y</property>
+                    </property>
+                    <property name="[1]" type="array" class="[Ljava.lang.String;">
+                        <property name="[0]" type="string">drag force</property>
+                        <property name="[1]" type="string">x</property>
+                        <property name="[2]" type="string">y</property>
+                    </property>
+                </property>
+            </object>
+            </property>
+        </property>
+    </property>
+    <property name="selected_views" type="array" class="[Ljava.lang.String;">
+        <property name="[0]" type="string">Plot View</property>
+        <property name="[1]" type="string">Plot View</property>
+        <property name="[2]" type="string">World View</property>
+        <property name="[3]" type="string">World View</property>
+    </property>
+    <property name="track_control_x" type="int">30</property>
+    <property name="track_control_y" type="int">96</property>
+    <property name="info_x" type="int">17</property>
+    <property name="info_y" type="int">219</property>
+</object>

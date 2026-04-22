@@ -1,0 +1,674 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object class="org.opensourcephysics.cabrillo.tracker.TrackerPanel">
+    <property name="width" type="double">640.0</property>
+    <property name="height" type="double">480.0</property>
+    <property name="magnification" type="double">1.0</property>
+    <property name="author" type="string">Douglas Brown</property>
+    <property name="contact" type="string">dobrown@cabrillo.edu</property>
+    <property name="videoclip" type="object">
+    <object class="org.opensourcephysics.media.core.VideoClip">
+        <property name="video" type="object">
+        <object class="org.opensourcephysics.media.quicktime.QTVideo">
+            <property name="path" type="string">../videos/parachute_monkey.mp4</property>
+            <property name="filters" type="collection" class="java.util.ArrayList">
+                <property name="item" type="object">
+                <object class="org.opensourcephysics.media.core.BrightnessFilter">
+                    <property name="brightness" type="int">-71</property>
+                    <property name="contrast" type="double">70.0</property>
+                </object>
+                </property>
+            </property>
+        </object>
+        </property>
+        <property name="startframe" type="int">1</property>
+        <property name="stepsize" type="int">1</property>
+        <property name="stepcount" type="int">19</property>
+        <property name="starttime" type="double">0.0</property>
+    </object>
+    </property>
+    <property name="clipcontrol" type="object">
+    <object class="org.opensourcephysics.media.core.StepperClipControl">
+        <property name="rate" type="double">1.0</property>
+        <property name="delta_t" type="double">33.0</property>
+    </object>
+    </property>
+    <property name="coords" type="object">
+    <object class="org.opensourcephysics.media.core.ImageCoordSystem">
+        <property name="fixedorigin" type="boolean">true</property>
+        <property name="fixedangle" type="boolean">true</property>
+        <property name="fixedscale" type="boolean">true</property>
+        <property name="locked" type="boolean">false</property>
+        <property name="framedata" type="array" class="[Lorg.opensourcephysics.media.core.ImageCoordSystem$FrameData;">
+            <property name="[0]" type="object">
+            <object class="org.opensourcephysics.media.core.ImageCoordSystem$FrameData">
+                <property name="xorigin" type="double">513.8230383973289</property>
+                <property name="yorigin" type="double">375.7262103505843</property>
+                <property name="angle" type="double">0.0</property>
+                <property name="xscale" type="double">262.4545993418148</property>
+                <property name="yscale" type="double">262.4545993418148</property>
+            </object>
+            </property>
+        </property>
+    </object>
+    </property>
+    <property name="tracks" type="collection" class="java.util.ArrayList">
+        <property name="item" type="object">
+        <object class="org.opensourcephysics.cabrillo.tracker.CoordAxes">
+            <property name="name" type="string">axes</property>
+            <property name="footprint" type="string">Footprint.BoldSimpleAxes</property>
+            <property name="visible" type="boolean">false</property>
+            <property name="trail" type="boolean">false</property>
+        </object>
+        </property>
+        <property name="item" type="object">
+        <object class="org.opensourcephysics.cabrillo.tracker.TapeMeasure">
+            <property name="name" type="string">tape measure</property>
+            <property name="footprint" type="string">Footprint.DoubleArrow</property>
+            <property name="visible" type="boolean">false</property>
+            <property name="trail" type="boolean">false</property>
+            <property name="fixedtape" type="boolean">true</property>
+            <property name="framedata" type="array" class="[Lorg.opensourcephysics.cabrillo.tracker.TapeMeasure$FrameData;">
+                <property name="[0]" type="object">
+                <object class="org.opensourcephysics.cabrillo.tracker.TapeMeasure$FrameData">
+                    <property name="x1" type="double">555.8931552587646</property>
+                    <property name="y1" type="double">116.29382303839732</property>
+                    <property name="x2" type="double">552.8881469115192</property>
+                    <property name="y2" type="double">378.7312186978298</property>
+                </object>
+                </property>
+            </property>
+        </object>
+        </property>
+        <property name="item" type="object">
+        <object class="org.opensourcephysics.cabrillo.tracker.DynamicParticle">
+            <property name="mass" type="double">0.0038</property>
+            <property name="name" type="string">monkey</property>
+            <property name="color" type="object">
+            <object class="java.awt.Color">
+                <property name="red" type="int">255</property>
+                <property name="green" type="int">0</property>
+                <property name="blue" type="int">0</property>
+                <property name="alpha" type="int">255</property>
+            </object>
+            </property>
+            <property name="footprint" type="string">CircleFootprint.Circle_8</property>
+            <property name="visible" type="boolean">true</property>
+            <property name="trail" type="boolean">true</property>
+            <property name="locked" type="boolean">true</property>
+            <property name="user_parameters" type="array" class="[Lorg.opensourcephysics.tools.Parameter;">
+                <property name="[0]" type="object">
+                <object class="org.opensourcephysics.tools.Parameter">
+                    <property name="name" type="string">m</property>
+                    <property name="function" type="string">0.0038</property>
+                    <property name="editable" type="boolean">false</property>
+                    <property name="name_editable" type="boolean">true</property>
+                </object>
+                </property>
+                <property name="[1]" type="object">
+                <object class="org.opensourcephysics.tools.Parameter">
+                    <property name="name" type="string">g</property>
+                    <property name="function" type="string">-9.81</property>
+                    <property name="editable" type="boolean">true</property>
+                    <property name="name_editable" type="boolean">true</property>
+                </object>
+                </property>
+                <property name="[2]" type="object">
+                <object class="org.opensourcephysics.tools.Parameter">
+                    <property name="name" type="string">rho</property>
+                    <property name="function" type="string">1.21</property>
+                    <property name="editable" type="boolean">true</property>
+                    <property name="name_editable" type="boolean">true</property>
+                </object>
+                </property>
+                <property name="[3]" type="object">
+                <object class="org.opensourcephysics.tools.Parameter">
+                    <property name="name" type="string">A</property>
+                    <property name="function" type="string">.01767</property>
+                    <property name="editable" type="boolean">true</property>
+                    <property name="name_editable" type="boolean">true</property>
+                </object>
+                </property>
+                <property name="[4]" type="object">
+                <object class="org.opensourcephysics.tools.Parameter">
+                    <property name="name" type="string">C</property>
+                    <property name="function" type="string">1.2</property>
+                    <property name="editable" type="boolean">true</property>
+                    <property name="name_editable" type="boolean">true</property>
+                </object>
+                </property>
+            </property>
+            <property name="initial_values" type="array" class="[Lorg.opensourcephysics.tools.Parameter;">
+                <property name="[0]" type="object">
+                <object class="org.opensourcephysics.tools.Parameter">
+                    <property name="name" type="string">t0</property>
+                    <property name="function" type="string">0.0</property>
+                    <property name="editable" type="boolean">true</property>
+                    <property name="name_editable" type="boolean">false</property>
+                    <property name="description" type="string">Initial time</property>
+                </object>
+                </property>
+                <property name="[1]" type="object">
+                <object class="org.opensourcephysics.tools.Parameter">
+                    <property name="name" type="string">x0</property>
+                    <property name="function" type="string">0</property>
+                    <property name="editable" type="boolean">true</property>
+                    <property name="name_editable" type="boolean">false</property>
+                    <property name="description" type="string">Initial position x-component</property>
+                </object>
+                </property>
+                <property name="[2]" type="object">
+                <object class="org.opensourcephysics.tools.Parameter">
+                    <property name="name" type="string">y0</property>
+                    <property name="function" type="string">1.153</property>
+                    <property name="editable" type="boolean">true</property>
+                    <property name="name_editable" type="boolean">false</property>
+                    <property name="description" type="string">Initial position y-component</property>
+                </object>
+                </property>
+                <property name="[3]" type="object">
+                <object class="org.opensourcephysics.tools.Parameter">
+                    <property name="name" type="string">vx0</property>
+                    <property name="function" type="string">0</property>
+                    <property name="editable" type="boolean">true</property>
+                    <property name="name_editable" type="boolean">false</property>
+                    <property name="description" type="string">Initial velocity x-component</property>
+                </object>
+                </property>
+                <property name="[4]" type="object">
+                <object class="org.opensourcephysics.tools.Parameter">
+                    <property name="name" type="string">vy0</property>
+                    <property name="function" type="string">0</property>
+                    <property name="editable" type="boolean">true</property>
+                    <property name="name_editable" type="boolean">false</property>
+                    <property name="description" type="string">Initial velocity y-component</property>
+                </object>
+                </property>
+            </property>
+            <property name="main_functions" type="array" class="[Lorg.opensourcephysics.tools.UserFunction;">
+                <property name="[0]" type="object">
+                <object class="org.opensourcephysics.tools.UserFunction">
+                    <property name="name" type="string">fx</property>
+                    <property name="expression" type="string">0</property>
+                    <property name="variables" type="array" class="[Ljava.lang.String;">
+                        <property name="[0]" type="string">x</property>
+                        <property name="[1]" type="string">vx</property>
+                        <property name="[2]" type="string">y</property>
+                        <property name="[3]" type="string">vy</property>
+                        <property name="[4]" type="string">t</property>
+                    </property>
+                    <property name="description" type="string">Force x-component</property>
+                    <property name="name_editable" type="boolean">false</property>
+                </object>
+                </property>
+                <property name="[1]" type="object">
+                <object class="org.opensourcephysics.tools.UserFunction">
+                    <property name="name" type="string">fy</property>
+                    <property name="expression" type="string">m*g+(.5*rho*vy^2*A*C)</property>
+                    <property name="variables" type="array" class="[Ljava.lang.String;">
+                        <property name="[0]" type="string">x</property>
+                        <property name="[1]" type="string">vx</property>
+                        <property name="[2]" type="string">y</property>
+                        <property name="[3]" type="string">vy</property>
+                        <property name="[4]" type="string">t</property>
+                    </property>
+                    <property name="description" type="string">Force y-component</property>
+                    <property name="name_editable" type="boolean">false</property>
+                </object>
+                </property>
+            </property>
+            <property name="trace" type="int">1</property>
+            <property name="inspector_x" type="int">5</property>
+            <property name="inspector_y" type="int">120</property>
+            <property name="inspector_h" type="int">563</property>
+            <property name="inspector_visible" type="boolean">false</property>
+        </object>
+        </property>
+        <property name="item" type="object">
+        <object class="org.opensourcephysics.cabrillo.tracker.DynamicParticle">
+            <property name="mass" type="double">0.0663</property>
+            <property name="name" type="string">dart</property>
+            <property name="color" type="object">
+            <object class="java.awt.Color">
+                <property name="red" type="int">0</property>
+                <property name="green" type="int">255</property>
+                <property name="blue" type="int">255</property>
+                <property name="alpha" type="int">255</property>
+            </object>
+            </property>
+            <property name="footprint" type="string">CircleFootprint.Circle_8</property>
+            <property name="visible" type="boolean">true</property>
+            <property name="trail" type="boolean">true</property>
+            <property name="locked" type="boolean">true</property>
+            <property name="user_parameters" type="array" class="[Lorg.opensourcephysics.tools.Parameter;">
+                <property name="[0]" type="object">
+                <object class="org.opensourcephysics.tools.Parameter">
+                    <property name="name" type="string">m</property>
+                    <property name="function" type="string">0.0663</property>
+                    <property name="editable" type="boolean">false</property>
+                    <property name="name_editable" type="boolean">true</property>
+                </object>
+                </property>
+                <property name="[1]" type="object">
+                <object class="org.opensourcephysics.tools.Parameter">
+                    <property name="name" type="string">g</property>
+                    <property name="function" type="string">-9.81</property>
+                    <property name="editable" type="boolean">true</property>
+                    <property name="name_editable" type="boolean">true</property>
+                </object>
+                </property>
+                <property name="[2]" type="object">
+                <object class="org.opensourcephysics.tools.Parameter">
+                    <property name="name" type="string">p</property>
+                    <property name="function" type="string">1.21</property>
+                    <property name="editable" type="boolean">true</property>
+                    <property name="name_editable" type="boolean">true</property>
+                </object>
+                </property>
+                <property name="[3]" type="object">
+                <object class="org.opensourcephysics.tools.Parameter">
+                    <property name="name" type="string">A</property>
+                    <property name="function" type="string">.00049</property>
+                    <property name="editable" type="boolean">true</property>
+                    <property name="name_editable" type="boolean">true</property>
+                </object>
+                </property>
+                <property name="[4]" type="object">
+                <object class="org.opensourcephysics.tools.Parameter">
+                    <property name="name" type="string">C</property>
+                    <property name="function" type="string">.1</property>
+                    <property name="editable" type="boolean">true</property>
+                    <property name="name_editable" type="boolean">true</property>
+                </object>
+                </property>
+            </property>
+            <property name="initial_values" type="array" class="[Lorg.opensourcephysics.tools.Parameter;">
+                <property name="[0]" type="object">
+                <object class="org.opensourcephysics.tools.Parameter">
+                    <property name="name" type="string">t0</property>
+                    <property name="function" type="string">0.0</property>
+                    <property name="editable" type="boolean">true</property>
+                    <property name="name_editable" type="boolean">false</property>
+                    <property name="description" type="string">Initial time</property>
+                </object>
+                </property>
+                <property name="[1]" type="object">
+                <object class="org.opensourcephysics.tools.Parameter">
+                    <property name="name" type="string">x0</property>
+                    <property name="function" type="string">-1.73</property>
+                    <property name="editable" type="boolean">true</property>
+                    <property name="name_editable" type="boolean">false</property>
+                    <property name="description" type="string">Initial position x-component</property>
+                </object>
+                </property>
+                <property name="[2]" type="object">
+                <object class="org.opensourcephysics.tools.Parameter">
+                    <property name="name" type="string">y0</property>
+                    <property name="function" type="string">0</property>
+                    <property name="editable" type="boolean">true</property>
+                    <property name="name_editable" type="boolean">false</property>
+                    <property name="description" type="string">Initial position y-component</property>
+                </object>
+                </property>
+                <property name="[3]" type="object">
+                <object class="org.opensourcephysics.tools.Parameter">
+                    <property name="name" type="string">vx0</property>
+                    <property name="function" type="string">3.46</property>
+                    <property name="editable" type="boolean">true</property>
+                    <property name="name_editable" type="boolean">false</property>
+                    <property name="description" type="string">Initial velocity x-component</property>
+                </object>
+                </property>
+                <property name="[4]" type="object">
+                <object class="org.opensourcephysics.tools.Parameter">
+                    <property name="name" type="string">vy0</property>
+                    <property name="function" type="string">3.46</property>
+                    <property name="editable" type="boolean">true</property>
+                    <property name="name_editable" type="boolean">false</property>
+                    <property name="description" type="string">Initial velocity y-component</property>
+                </object>
+                </property>
+            </property>
+            <property name="main_functions" type="array" class="[Lorg.opensourcephysics.tools.UserFunction;">
+                <property name="[0]" type="object">
+                <object class="org.opensourcephysics.tools.UserFunction">
+                    <property name="name" type="string">fx</property>
+                    <property name="expression" type="string">-(.5*p*vx^2*A*C)</property>
+                    <property name="variables" type="array" class="[Ljava.lang.String;">
+                        <property name="[0]" type="string">x</property>
+                        <property name="[1]" type="string">vx</property>
+                        <property name="[2]" type="string">y</property>
+                        <property name="[3]" type="string">vy</property>
+                        <property name="[4]" type="string">t</property>
+                    </property>
+                    <property name="description" type="string">Force x-component</property>
+                    <property name="name_editable" type="boolean">false</property>
+                </object>
+                </property>
+                <property name="[1]" type="object">
+                <object class="org.opensourcephysics.tools.UserFunction">
+                    <property name="name" type="string">fy</property>
+                    <property name="expression" type="string">m*g+(.5*p*vy^2*A*C)</property>
+                    <property name="variables" type="array" class="[Ljava.lang.String;">
+                        <property name="[0]" type="string">x</property>
+                        <property name="[1]" type="string">vx</property>
+                        <property name="[2]" type="string">y</property>
+                        <property name="[3]" type="string">vy</property>
+                        <property name="[4]" type="string">t</property>
+                    </property>
+                    <property name="description" type="string">Force y-component</property>
+                    <property name="name_editable" type="boolean">false</property>
+                </object>
+                </property>
+            </property>
+            <property name="trace" type="int">1</property>
+            <property name="inspector_x" type="int">5</property>
+            <property name="inspector_y" type="int">120</property>
+            <property name="inspector_h" type="int">563</property>
+            <property name="inspector_visible" type="boolean">false</property>
+        </object>
+        </property>
+        <property name="item" type="object">
+        <object class="org.opensourcephysics.cabrillo.tracker.Vector">
+            <property name="name" type="string">initial velocity</property>
+            <property name="color" type="object">
+            <object class="java.awt.Color">
+                <property name="red" type="int">0</property>
+                <property name="green" type="int">255</property>
+                <property name="blue" type="int">0</property>
+                <property name="alpha" type="int">255</property>
+            </object>
+            </property>
+            <property name="footprint" type="string">Footprint.BoldArrow</property>
+            <property name="visible" type="boolean">true</property>
+            <property name="trail" type="boolean">true</property>
+            <property name="framedata" type="array" class="[Lorg.opensourcephysics.cabrillo.tracker.Vector$FrameData;">
+                <property name="[1]" type="object">
+                <object class="org.opensourcephysics.cabrillo.tracker.Vector$FrameData">
+                    <property name="xtail" type="double">64.092346015825</property>
+                    <property name="ytail" type="double">373.70398119619534</property>
+                    <property name="xcomponent" type="double">315.4918258119324</property>
+                    <property name="ycomponent" type="double">-315.4918258119327</property>
+                </object>
+                </property>
+                <property name="[24]" type="object">
+                <object class="org.opensourcephysics.cabrillo.tracker.Vector$FrameData">
+                    <property name="xtail" type="double">60.01804985516317</property>
+                    <property name="ytail" type="double">376.0584163018354</property>
+                    <property name="xcomponent" type="double">352.60851120157173</property>
+                    <property name="ycomponent" type="double">-352.6085112015717</property>
+                </object>
+                </property>
+            </property>
+        </object>
+        </property>
+    </property>
+    <property name="dividers" type="array" class="[D">
+        <property name="array" type="string">{1.0,0.9692898272552783,1.0,0.0}</property>
+    </property>
+    <property name="views" type="array" class="[[Lorg.opensourcephysics.cabrillo.tracker.TView;">
+        <property name="[0]" type="array" class="[Lorg.opensourcephysics.cabrillo.tracker.TView;">
+            <property name="[1]" type="object">
+            <object class="org.opensourcephysics.cabrillo.tracker.PlotTView">
+                <property name="selected_track" type="string">initial velocity</property>
+                <property name="track_views" type="collection" class="java.util.ArrayList">
+                    <property name="item" type="object">
+                    <object class="org.opensourcephysics.cabrillo.tracker.PlotTrackView">
+                        <property name="track" type="string">initial velocity</property>
+                        <property name="plot0" type="object">
+                        <object class="org.opensourcephysics.cabrillo.tracker.TrackPlottingPanel">
+                            <property name="x_var" type="string">t</property>
+                            <property name="y_var" type="string">x</property>
+                        </object>
+                        </property>
+                    </object>
+                    </property>
+                    <property name="item" type="object">
+                    <object class="org.opensourcephysics.cabrillo.tracker.PlotTrackView">
+                        <property name="track" type="string">monkey</property>
+                        <property name="plot0" type="object">
+                        <object class="org.opensourcephysics.cabrillo.tracker.TrackPlottingPanel">
+                            <property name="x_var" type="string">t</property>
+                            <property name="y_var" type="string">x</property>
+                        </object>
+                        </property>
+                    </object>
+                    </property>
+                    <property name="item" type="object">
+                    <object class="org.opensourcephysics.cabrillo.tracker.PlotTrackView">
+                        <property name="track" type="string">dart</property>
+                        <property name="plot0" type="object">
+                        <object class="org.opensourcephysics.cabrillo.tracker.TrackPlottingPanel">
+                            <property name="x_var" type="string">t</property>
+                            <property name="y_var" type="string">x</property>
+                        </object>
+                        </property>
+                    </object>
+                    </property>
+                </property>
+            </object>
+            </property>
+            <property name="[2]" type="object">
+            <object class="org.opensourcephysics.cabrillo.tracker.TableTView">
+                <property name="selected_track" type="string">monkey</property>
+                <property name="track_columns" type="array" class="[[Ljava.lang.String;">
+                    <property name="[0]" type="array" class="[Ljava.lang.String;">
+                        <property name="[0]" type="string">initial velocity</property>
+                        <property name="[1]" type="string">x</property>
+                        <property name="[2]" type="string">y</property>
+                    </property>
+                    <property name="[1]" type="array" class="[Ljava.lang.String;">
+                        <property name="[0]" type="string">monkey</property>
+                        <property name="[1]" type="string">x</property>
+                        <property name="[2]" type="string">y</property>
+                    </property>
+                    <property name="[2]" type="array" class="[Ljava.lang.String;">
+                        <property name="[0]" type="string">dart</property>
+                        <property name="[1]" type="string">x</property>
+                        <property name="[2]" type="string">y</property>
+                    </property>
+                </property>
+            </object>
+            </property>
+        </property>
+        <property name="[1]" type="array" class="[Lorg.opensourcephysics.cabrillo.tracker.TView;">
+            <property name="[1]" type="object">
+            <object class="org.opensourcephysics.cabrillo.tracker.PlotTView">
+                <property name="selected_track" type="string">monkey</property>
+                <property name="track_views" type="collection" class="java.util.ArrayList">
+                    <property name="item" type="object">
+                    <object class="org.opensourcephysics.cabrillo.tracker.PlotTrackView">
+                        <property name="track" type="string">initial velocity</property>
+                        <property name="plot0" type="object">
+                        <object class="org.opensourcephysics.cabrillo.tracker.TrackPlottingPanel">
+                            <property name="x_var" type="string">t</property>
+                            <property name="y_var" type="string">x</property>
+                        </object>
+                        </property>
+                    </object>
+                    </property>
+                    <property name="item" type="object">
+                    <object class="org.opensourcephysics.cabrillo.tracker.PlotTrackView">
+                        <property name="track" type="string">monkey</property>
+                        <property name="plot0" type="object">
+                        <object class="org.opensourcephysics.cabrillo.tracker.TrackPlottingPanel">
+                            <property name="x_var" type="string">t</property>
+                            <property name="y_var" type="string">x</property>
+                        </object>
+                        </property>
+                    </object>
+                    </property>
+                    <property name="item" type="object">
+                    <object class="org.opensourcephysics.cabrillo.tracker.PlotTrackView">
+                        <property name="track" type="string">dart</property>
+                        <property name="plot0" type="object">
+                        <object class="org.opensourcephysics.cabrillo.tracker.TrackPlottingPanel">
+                            <property name="x_var" type="string">t</property>
+                            <property name="y_var" type="string">x</property>
+                        </object>
+                        </property>
+                    </object>
+                    </property>
+                </property>
+            </object>
+            </property>
+            <property name="[2]" type="object">
+            <object class="org.opensourcephysics.cabrillo.tracker.TableTView">
+                <property name="selected_track" type="string">initial velocity</property>
+                <property name="track_columns" type="array" class="[[Ljava.lang.String;">
+                    <property name="[0]" type="array" class="[Ljava.lang.String;">
+                        <property name="[0]" type="string">initial velocity</property>
+                        <property name="[1]" type="string">x</property>
+                        <property name="[2]" type="string">y</property>
+                    </property>
+                    <property name="[1]" type="array" class="[Ljava.lang.String;">
+                        <property name="[0]" type="string">monkey</property>
+                        <property name="[1]" type="string">x</property>
+                        <property name="[2]" type="string">y</property>
+                    </property>
+                    <property name="[2]" type="array" class="[Ljava.lang.String;">
+                        <property name="[0]" type="string">dart</property>
+                        <property name="[1]" type="string">x</property>
+                        <property name="[2]" type="string">y</property>
+                    </property>
+                </property>
+            </object>
+            </property>
+        </property>
+        <property name="[2]" type="array" class="[Lorg.opensourcephysics.cabrillo.tracker.TView;">
+            <property name="[1]" type="object">
+            <object class="org.opensourcephysics.cabrillo.tracker.PlotTView">
+                <property name="selected_track" type="string">monkey</property>
+                <property name="track_views" type="collection" class="java.util.ArrayList">
+                    <property name="item" type="object">
+                    <object class="org.opensourcephysics.cabrillo.tracker.PlotTrackView">
+                        <property name="track" type="string">initial velocity</property>
+                        <property name="plot0" type="object">
+                        <object class="org.opensourcephysics.cabrillo.tracker.TrackPlottingPanel">
+                            <property name="x_var" type="string">t</property>
+                            <property name="y_var" type="string">x</property>
+                        </object>
+                        </property>
+                    </object>
+                    </property>
+                    <property name="item" type="object">
+                    <object class="org.opensourcephysics.cabrillo.tracker.PlotTrackView">
+                        <property name="track" type="string">monkey</property>
+                        <property name="plot0" type="object">
+                        <object class="org.opensourcephysics.cabrillo.tracker.TrackPlottingPanel">
+                            <property name="x_var" type="string">t</property>
+                            <property name="y_var" type="string">x</property>
+                        </object>
+                        </property>
+                    </object>
+                    </property>
+                    <property name="item" type="object">
+                    <object class="org.opensourcephysics.cabrillo.tracker.PlotTrackView">
+                        <property name="track" type="string">dart</property>
+                        <property name="plot0" type="object">
+                        <object class="org.opensourcephysics.cabrillo.tracker.TrackPlottingPanel">
+                            <property name="x_var" type="string">t</property>
+                            <property name="y_var" type="string">x</property>
+                        </object>
+                        </property>
+                    </object>
+                    </property>
+                </property>
+            </object>
+            </property>
+            <property name="[2]" type="object">
+            <object class="org.opensourcephysics.cabrillo.tracker.TableTView">
+                <property name="selected_track" type="string">monkey</property>
+                <property name="track_columns" type="array" class="[[Ljava.lang.String;">
+                    <property name="[0]" type="array" class="[Ljava.lang.String;">
+                        <property name="[0]" type="string">initial velocity</property>
+                        <property name="[1]" type="string">x</property>
+                        <property name="[2]" type="string">y</property>
+                    </property>
+                    <property name="[1]" type="array" class="[Ljava.lang.String;">
+                        <property name="[0]" type="string">monkey</property>
+                        <property name="[1]" type="string">x</property>
+                        <property name="[2]" type="string">y</property>
+                    </property>
+                    <property name="[2]" type="array" class="[Ljava.lang.String;">
+                        <property name="[0]" type="string">dart</property>
+                        <property name="[1]" type="string">x</property>
+                        <property name="[2]" type="string">y</property>
+                    </property>
+                </property>
+            </object>
+            </property>
+        </property>
+        <property name="[3]" type="array" class="[Lorg.opensourcephysics.cabrillo.tracker.TView;">
+            <property name="[1]" type="object">
+            <object class="org.opensourcephysics.cabrillo.tracker.PlotTView">
+                <property name="selected_track" type="string">monkey</property>
+                <property name="track_views" type="collection" class="java.util.ArrayList">
+                    <property name="item" type="object">
+                    <object class="org.opensourcephysics.cabrillo.tracker.PlotTrackView">
+                        <property name="track" type="string">initial velocity</property>
+                        <property name="plot0" type="object">
+                        <object class="org.opensourcephysics.cabrillo.tracker.TrackPlottingPanel">
+                            <property name="x_var" type="string">t</property>
+                            <property name="y_var" type="string">x</property>
+                        </object>
+                        </property>
+                    </object>
+                    </property>
+                    <property name="item" type="object">
+                    <object class="org.opensourcephysics.cabrillo.tracker.PlotTrackView">
+                        <property name="track" type="string">monkey</property>
+                        <property name="plot0" type="object">
+                        <object class="org.opensourcephysics.cabrillo.tracker.TrackPlottingPanel">
+                            <property name="x_var" type="string">t</property>
+                            <property name="y_var" type="string">x</property>
+                        </object>
+                        </property>
+                    </object>
+                    </property>
+                    <property name="item" type="object">
+                    <object class="org.opensourcephysics.cabrillo.tracker.PlotTrackView">
+                        <property name="track" type="string">dart</property>
+                        <property name="plot0" type="object">
+                        <object class="org.opensourcephysics.cabrillo.tracker.TrackPlottingPanel">
+                            <property name="x_var" type="string">t</property>
+                            <property name="y_var" type="string">x</property>
+                        </object>
+                        </property>
+                    </object>
+                    </property>
+                </property>
+            </object>
+            </property>
+            <property name="[2]" type="object">
+            <object class="org.opensourcephysics.cabrillo.tracker.TableTView">
+                <property name="selected_track" type="string">monkey</property>
+                <property name="track_columns" type="array" class="[[Ljava.lang.String;">
+                    <property name="[0]" type="array" class="[Ljava.lang.String;">
+                        <property name="[0]" type="string">initial velocity</property>
+                        <property name="[1]" type="string">x</property>
+                        <property name="[2]" type="string">y</property>
+                    </property>
+                    <property name="[1]" type="array" class="[Ljava.lang.String;">
+                        <property name="[0]" type="string">monkey</property>
+                        <property name="[1]" type="string">x</property>
+                        <property name="[2]" type="string">y</property>
+                    </property>
+                    <property name="[2]" type="array" class="[Ljava.lang.String;">
+                        <property name="[0]" type="string">dart</property>
+                        <property name="[1]" type="string">x</property>
+                        <property name="[2]" type="string">y</property>
+                    </property>
+                </property>
+            </object>
+            </property>
+        </property>
+    </property>
+    <property name="selected_views" type="array" class="[Ljava.lang.String;">
+        <property name="[0]" type="string">Plot View</property>
+        <property name="[1]" type="string">Table View</property>
+        <property name="[2]" type="string">World View</property>
+        <property name="[3]" type="string">World View</property>
+    </property>
+    <property name="track_control_x" type="int">8</property>
+    <property name="track_control_y" type="int">91</property>
+</object>

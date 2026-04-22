@@ -1,0 +1,45 @@
+{
+  "color": "dark_red",
+  "object_ranges": [
+    [
+      [
+        0,
+        70,
+        59
+      ],
+      [
+        14,
+        211,
+        245
+      ]
+    ],
+    [
+      [
+        170,
+        70,
+        59
+      ],
+      [
+        180,
+        211,
+        245
+      ]
+    ]
+  ],
+  "summary": {
+    "pixel_count": 139761,
+    "h_percentile_low": 8,
+    "h_percentile_high": 178,
+    "s_percentile_low": 80,
+    "s_percentile_high": 201,
+    "v_percentile_low": 69,
+    "v_percentile_high": 235,
+    "low_h_group_size": 8025,
+    "high_h_group_size": 131736
+  },
+  "images_used": [
+    "D:\\HIT\\CUPT\\Flipo_Flip\\Vedio_Analysis\\img1.png",
+    "D:\\HIT\\CUPT\\Flipo_Flip\\Vedio_Analysis\\img2.png",
+    "D:\\HIT\\CUPT\\Flipo_Flip\\Vedio_Analysis\\img3.png"
+  ]
+}

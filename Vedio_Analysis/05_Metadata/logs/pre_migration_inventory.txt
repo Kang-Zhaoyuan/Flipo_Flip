@@ -1,0 +1,9 @@
+Total CSV: 31
+Raw CSV (*_raw_data.csv): 9
+Cleaned CSV (cleaned_data_*.csv): 21
+Legacy CSV (flip_data.csv): 1
+Total MP4: 49
+VID_*.mp4: 22
+Color Experiment MP4: 17
+PNG Reports: 3
+Tracker Logs: 1

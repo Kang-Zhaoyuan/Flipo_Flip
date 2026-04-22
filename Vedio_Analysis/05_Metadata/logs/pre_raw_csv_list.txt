@@ -1,0 +1,10 @@
+./Pink_15_01_raw_data.csv
+./Pink_D15_T166_raw_data.csv
+./Pink_D30_T166_raw_data.csv
+./Pink_D45_T166_raw_data.csv
+./Pink_D45_T170_raw_data.csv
+./Pink_D45_T173_raw_data.csv
+./Pink_D45_T176_raw_data.csv
+./Pink_D45_T179_raw_data.csv
+./Pink_D60_T166_raw_data.csv
+./Pink_D75_T166_raw_data.csv

@@ -1,0 +1,12 @@
+{
+  version: 2,
+  mediaFileName: 'VID_20260415_202738_HSR_240.mp4',
+  cutSegments: [
+    {
+      start: 20.44894,
+      end: 22.157115,
+      name: '',
+      selected: true,
+    },
+  ],
+}

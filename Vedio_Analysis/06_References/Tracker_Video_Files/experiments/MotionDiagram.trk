@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object class="org.opensourcephysics.cabrillo.tracker.TrackerPanel">
+    <property name="width" type="double">640.0</property>
+    <property name="height" type="double">480.0</property>
+    <property name="magnification" type="double">1.0</property>
+    <property name="author" type="string">Douglas Brown</property>
+    <property name="contact" type="string">dobrown@cabrillo.edu</property>
+    <property name="description" type="string"><![CDATA[When played, a ghost filter transforms this video of a tossed ball into a "live" motion diagram with fading ghost images. The displacement between successive ghosts shows the ball's average velocity during that interval. 
+
+The ghost filter inspector (Video|Filters|Ghost|Properties) lets you adjust the fade rate, clear the ghosts, or temporarily disable the filter.
+
+Note how the menus have been greatly simplified by unchecking most items in the Preferences dialog. To display the Preferences dialog, choose the Edit|Preferences menu item.]]></property>
+    <property name="videoclip" type="object">
+    <object class="org.opensourcephysics.media.core.VideoClip">
+        <property name="video" type="object">
+        <object class="org.opensourcephysics.media.quicktime.QTVideo">
+            <property name="path" type="string">../videos/BallTossOut.mp4</property>
+            <property name="filters" type="collection" class="java.util.ArrayList">
+                <property name="item" type="object">
+                <object class="org.opensourcephysics.media.core.GhostFilter">
+                    <property name="fade" type="double">0.1</property>
+                    <property name="inspector_x" type="int">486</property>
+                    <property name="inspector_y" type="int">578</property>
+                </object>
+                </property>
+            </property>
+        </object>
+        </property>
+        <property name="startframe" type="int">6</property>
+        <property name="stepsize" type="int">2</property>
+        <property name="stepcount" type="int">13</property>
+        <property name="starttime" type="double">0.0</property>
+    </object>
+    </property>
+    <property name="clipcontrol" type="object">
+    <object class="org.opensourcephysics.media.core.StepperClipControl">
+        <property name="rate" type="double">1.0</property>
+        <property name="delta_t" type="double">33.0</property>
+        <property name="looping" type="boolean">true</property>
+    </object>
+    </property>
+    <property name="coords" type="object">
+    <object class="org.opensourcephysics.media.core.ImageCoordSystem">
+        <property name="fixedorigin" type="boolean">true</property>
+        <property name="fixedangle" type="boolean">true</property>
+        <property name="fixedscale" type="boolean">true</property>
+        <property name="locked" type="boolean">false</property>
+        <property name="framedata" type="array" class="[Lorg.opensourcephysics.media.core.ImageCoordSystem$FrameData;">
+            <property name="[0]" type="object">
+            <object class="org.opensourcephysics.media.core.ImageCoordSystem$FrameData">
+                <property name="xorigin" type="double">284.0845070422535</property>
+                <property name="yorigin" type="double">207.88732394366198</property>
+                <property name="angle" type="double">0.04401895816986783</property>
+                <property name="xscale" type="double">398.70891559670895</property>
+                <property name="yscale" type="double">398.70891559670895</property>
+            </object>
+            </property>
+        </property>
+    </object>
+    </property>
+    <property name="tracks" type="collection" class="java.util.ArrayList">
+        <property name="item" type="object">
+        <object class="org.opensourcephysics.cabrillo.tracker.CoordAxes">
+            <property name="name" type="string">axes</property>
+            <property name="footprint" type="string">Footprint.BoldSimpleAxes</property>
+            <property name="visible" type="boolean">false</property>
+            <property name="trail" type="boolean">false</property>
+        </object>
+        </property>
+        <property name="item" type="object">
+        <object class="org.opensourcephysics.cabrillo.tracker.TapeMeasure">
+            <property name="name" type="string">tape measure</property>
+            <property name="color" type="object">
+            <object class="java.awt.Color">
+                <property name="red" type="int">255</property>
+                <property name="green" type="int">204</property>
+                <property name="blue" type="int">0</property>
+                <property name="alpha" type="int">255</property>
+            </object>
+            </property>
+            <property name="footprint" type="string">Footprint.DoubleArrow</property>
+            <property name="visible" type="boolean">false</property>
+            <property name="trail" type="boolean">false</property>
+            <property name="fixedtape" type="boolean">true</property>
+            <property name="framedata" type="array" class="[Lorg.opensourcephysics.cabrillo.tracker.TapeMeasure$FrameData;">
+                <property name="[0]" type="object">
+                <object class="org.opensourcephysics.cabrillo.tracker.TapeMeasure$FrameData">
+                    <property name="x1" type="double">272.20046937463627</property>
+                    <property name="y1" type="double">446.11086870171016</property>
+                    <property name="x2" type="double">273.2009904793783</property>
+                    <property name="y2" type="double">47.40320846200204</property>
+                </object>
+                </property>
+            </property>
+        </object>
+        </property>
+    </property>
+    <property name="configuration" type="object">
+    <object class="org.opensourcephysics.cabrillo.tracker.Configuration">
+        <property name="enabled" type="collection" class="java.util.TreeSet">
+            <property name="item" type="string">config.saveWithData</property>
+            <property name="item" type="string">file.close</property>
+            <property name="item" type="string">file.open</property>
+            <property name="item" type="string">file.saveAs</property>
+            <property name="item" type="string">video.filters</property>
+        </property>
+    </object>
+    </property>
+    <property name="dividers" type="array" class="[D">
+        <property name="array" type="string">{1.0,0.5,1.0,0.0}</property>
+    </property>
+    <property name="views" type="array" class="[[Lorg.opensourcephysics.cabrillo.tracker.TView;">
+        <property name="[0]" type="array" class="[Lorg.opensourcephysics.cabrillo.tracker.TView;"/>
+        <property name="[1]" type="array" class="[Lorg.opensourcephysics.cabrillo.tracker.TView;"/>
+        <property name="[2]" type="array" class="[Lorg.opensourcephysics.cabrillo.tracker.TView;"/>
+        <property name="[3]" type="array" class="[Lorg.opensourcephysics.cabrillo.tracker.TView;"/>
+    </property>
+    <property name="selected_views" type="array" class="[Ljava.lang.String;">
+        <property name="[0]" type="string">Plot View</property>
+        <property name="[1]" type="string">Table View</property>
+        <property name="[2]" type="string">World View</property>
+        <property name="[3]" type="string">World View</property>
+    </property>
+    <property name="info_x" type="int">423</property>
+    <property name="info_y" type="int">16</property>
+</object>

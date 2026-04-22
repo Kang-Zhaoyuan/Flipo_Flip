@@ -1,0 +1,27 @@
+# --- 虚拟环境 (针对你的 Simulation/.venv) ---
+.venv/
+venv/
+env/
+# 同时也忽略 Python 自动生成的缓存
+__pycache__/
+*.pyc
+
+# --- 视频文件 (你之前要求的) ---
+*.mp4
+*.mkv
+*.mov
+*.avi
+*.flv
+*.wmv
+
+# --- IDE 与 系统文件 ---
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# --- 临时文件与日志 ---
+*.log
+# 如果你不希望 GitHub 上出现那个自动生成的目录树文件，可以取消下面一行的注释
+# folder_structure.txt
+# Click_me_to_refresh_filetree.batgit rm -r --cached .

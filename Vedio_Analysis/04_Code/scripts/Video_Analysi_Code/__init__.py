@@ -1,0 +1,1 @@
+"""Flipo Flip analysis package."""

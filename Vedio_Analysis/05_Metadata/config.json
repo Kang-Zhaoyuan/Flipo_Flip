@@ -1,0 +1,357 @@
+{
+  "videos": {
+    "D:\\HIT\\CUPT\\Flipo_Flip\\Vedio_Analysis\\Pink_15_01.mp4": {
+      "video_path": "D:\\HIT\\CUPT\\Flipo_Flip\\Vedio_Analysis\\Pink_15_01.mp4",
+      "calibration_frame_index": 53,
+      "point1": [
+        273,
+        702
+      ],
+      "point2": [
+        276,
+        959
+      ],
+      "distance_mm": 50.0,
+      "pixel_distance": 257.01751708984375,
+      "k_mm_per_pixel": 0.1945392694091036
+    },
+    "D:\\HIT\\CUPT\\Flipo_Flip\\Vedio_Analysis\\VID_20260415_202517_HSR_240.mp4": {
+      "video_path": "D:\\HIT\\CUPT\\Flipo_Flip\\Vedio_Analysis\\VID_20260415_202517_HSR_240.mp4",
+      "point1": [
+        204,
+        711
+      ],
+      "point2": [
+        284,
+        961
+      ],
+      "distance_mm": 50.0,
+      "pixel_distance": 262.48809814453125,
+      "k_mm_per_pixel": 0.19048482713478684
+    },
+    "D:\\HIT\\CUPT\\Flipo_Flip\\Vedio_Analysis\\VID_20260415_202657_HSR_240.mp4": {
+      "video_path": "D:\\HIT\\CUPT\\Flipo_Flip\\Vedio_Analysis\\VID_20260415_202657_HSR_240.mp4",
+      "point1": [
+        237,
+        703
+      ],
+      "point2": [
+        248,
+        963
+      ],
+      "distance_mm": 50.0,
+      "pixel_distance": 260.2325744628906,
+      "k_mm_per_pixel": 0.19213582351555317
+    },
+    "D:\\HIT\\CUPT\\Flipo_Flip\\Vedio_Analysis\\VID_20260415_202210_HSR_240.mp4": {
+      "video_path": "D:\\HIT\\CUPT\\Flipo_Flip\\Vedio_Analysis\\VID_20260415_202210_HSR_240.mp4",
+      "point1": [
+        237,
+        703
+      ],
+      "point2": [
+        248,
+        963
+      ],
+      "distance_mm": 50.0,
+      "pixel_distance": 260.2325744628906,
+      "k_mm_per_pixel": 0.19213582351555317
+    },
+    "D:\\HIT\\CUPT\\Flipo_Flip\\Vedio_Analysis\\VID_20260417_111840_HSR_240.mp4": {
+      "video_path": "D:\\HIT\\CUPT\\Flipo_Flip\\Vedio_Analysis\\VID_20260417_111840_HSR_240.mp4",
+      "point1": [
+        237,
+        703
+      ],
+      "point2": [
+        248,
+        963
+      ],
+      "distance_mm": 50.0,
+      "pixel_distance": 260.2325744628906,
+      "k_mm_per_pixel": 0.19213582351555317
+    },
+    "D:\\HIT\\CUPT\\Flipo_Flip\\Vedio_Analysis\\VID_20260417_112514_HSR_240.mp4": {
+      "video_path": "D:\\HIT\\CUPT\\Flipo_Flip\\Vedio_Analysis\\VID_20260417_112514_HSR_240.mp4",
+      "calibration_frame_index": 25696,
+      "point1": [
+        199,
+        694
+      ],
+      "point2": [
+        187,
+        967
+      ],
+      "distance_mm": 50.0,
+      "pixel_distance": 273.26361083984375,
+      "k_mm_per_pixel": 0.1829735025689328
+    },
+    "D:\\HIT\\CUPT\\Flipo_Flip\\Vedio_Analysis\\Pink\\Pink_D45_T166.mp4": {
+      "video_path": "D:\\HIT\\CUPT\\Flipo_Flip\\Vedio_Analysis\\Pink\\Pink_D45_T166.mp4",
+      "calibration_frame_index": 2346,
+      "point1": [
+        260,
+        697
+      ],
+      "point2": [
+        255,
+        968
+      ],
+      "distance_mm": 50.0,
+      "pixel_distance": 271.0461120605469,
+      "k_mm_per_pixel": 0.1844704564101288
+    },
+    "D:\\HIT\\CUPT\\Flipo_Flip\\Vedio_Analysis\\Pink\\Pink_D15_T166.mp4": {
+      "video_path": "D:\\HIT\\CUPT\\Flipo_Flip\\Vedio_Analysis\\Pink\\Pink_D15_T166.mp4",
+      "calibration_frame_index": 2937,
+      "point1": [
+        241,
+        698
+      ],
+      "point2": [
+        248,
+        967
+      ],
+      "distance_mm": 50.0,
+      "pixel_distance": 269.091064453125,
+      "k_mm_per_pixel": 0.18581070353121992
+    },
+    "D:\\HIT\\CUPT\\Flipo_Flip\\Vedio_Analysis\\Pink\\Pink_D30_T166.mp4": {
+      "video_path": "D:\\HIT\\CUPT\\Flipo_Flip\\Vedio_Analysis\\Pink\\Pink_D30_T166.mp4",
+      "calibration_frame_index": 2937,
+      "point1": [
+        241,
+        698
+      ],
+      "point2": [
+        248,
+        967
+      ],
+      "distance_mm": 50.0,
+      "pixel_distance": 269.091064453125,
+      "k_mm_per_pixel": 0.18581070353121992
+    },
+    "D:\\HIT\\CUPT\\Flipo_Flip\\Vedio_Analysis\\Pink\\Pink_D45_T170.mp4": {
+      "video_path": "D:\\HIT\\CUPT\\Flipo_Flip\\Vedio_Analysis\\Pink\\Pink_D45_T170.mp4",
+      "calibration_frame_index": 2346,
+      "point1": [
+        260,
+        697
+      ],
+      "point2": [
+        255,
+        968
+      ],
+      "distance_mm": 50.0,
+      "pixel_distance": 271.0461120605469,
+      "k_mm_per_pixel": 0.1844704564101288
+    },
+    "D:\\HIT\\CUPT\\Flipo_Flip\\Vedio_Analysis\\Pink\\Pink_D45_T173.mp4": {
+      "video_path": "D:\\HIT\\CUPT\\Flipo_Flip\\Vedio_Analysis\\Pink\\Pink_D45_T173.mp4",
+      "calibration_frame_index": 2346,
+      "point1": [
+        260,
+        697
+      ],
+      "point2": [
+        255,
+        968
+      ],
+      "distance_mm": 50.0,
+      "pixel_distance": 271.0461120605469,
+      "k_mm_per_pixel": 0.1844704564101288
+    },
+    "D:\\HIT\\CUPT\\Flipo_Flip\\Vedio_Analysis\\Pink\\Pink_D45_T176.mp4": {
+      "video_path": "D:\\HIT\\CUPT\\Flipo_Flip\\Vedio_Analysis\\Pink\\Pink_D45_T176.mp4",
+      "calibration_frame_index": 2346,
+      "point1": [
+        260,
+        697
+      ],
+      "point2": [
+        255,
+        968
+      ],
+      "distance_mm": 50.0,
+      "pixel_distance": 271.0461120605469,
+      "k_mm_per_pixel": 0.1844704564101288
+    },
+    "D:\\HIT\\CUPT\\Flipo_Flip\\Vedio_Analysis\\Pink\\Pink_D45_T179.mp4": {
+      "video_path": "D:\\HIT\\CUPT\\Flipo_Flip\\Vedio_Analysis\\Pink\\Pink_D45_T179.mp4",
+      "calibration_frame_index": 2346,
+      "point1": [
+        260,
+        697
+      ],
+      "point2": [
+        255,
+        968
+      ],
+      "distance_mm": 50.0,
+      "pixel_distance": 271.0461120605469,
+      "k_mm_per_pixel": 0.1844704564101288
+    },
+    "D:\\HIT\\CUPT\\Flipo_Flip\\Vedio_Analysis\\Pink\\Pink_D60_T166.mp4": {
+      "video_path": "D:\\HIT\\CUPT\\Flipo_Flip\\Vedio_Analysis\\Pink\\Pink_D60_T166.mp4",
+      "calibration_frame_index": 2346,
+      "point1": [
+        260,
+        697
+      ],
+      "point2": [
+        255,
+        968
+      ],
+      "distance_mm": 50.0,
+      "pixel_distance": 271.0461120605469,
+      "k_mm_per_pixel": 0.1844704564101288
+    },
+    "D:\\HIT\\CUPT\\Flipo_Flip\\Vedio_Analysis\\Pink\\Pink_D75_T166.mp4": {
+      "video_path": "D:\\HIT\\CUPT\\Flipo_Flip\\Vedio_Analysis\\Pink\\Pink_D75_T166.mp4",
+      "calibration_frame_index": 2346,
+      "point1": [
+        260,
+        697
+      ],
+      "point2": [
+        255,
+        968
+      ],
+      "distance_mm": 50.0,
+      "pixel_distance": 271.0461120605469,
+      "k_mm_per_pixel": 0.1844704564101288
+    },
+    "D:\\HIT\\CUPT\\Flipo_Flip\\Vedio_Analysis\\02_Videos\\Experiments\\Red\\Red_D15_T177.mp4": {
+      "video_path": "D:\\HIT\\CUPT\\Flipo_Flip\\Vedio_Analysis\\02_Videos\\Experiments\\Red\\Red_D15_T177.mp4",
+      "calibration_frame_index": 2346,
+      "point1": [
+        260,
+        697
+      ],
+      "point2": [
+        255,
+        968
+      ],
+      "distance_mm": 50.0,
+      "pixel_distance": 271.0461120605469,
+      "k_mm_per_pixel": 0.1844704564101288
+    },
+    "D:\\HIT\\CUPT\\Flipo_Flip\\Vedio_Analysis\\02_Videos\\Experiments\\Red\\Red_D30_T177.mp4": {
+      "video_path": "D:\\HIT\\CUPT\\Flipo_Flip\\Vedio_Analysis\\02_Videos\\Experiments\\Red\\Red_D30_T177.mp4",
+      "calibration_frame_index": 2346,
+      "point1": [
+        260,
+        697
+      ],
+      "point2": [
+        255,
+        968
+      ],
+      "distance_mm": 50.0,
+      "pixel_distance": 271.0461120605469,
+      "k_mm_per_pixel": 0.1844704564101288
+    },
+    "D:\\HIT\\CUPT\\Flipo_Flip\\Vedio_Analysis\\02_Videos\\Experiments\\Red\\Red_D45_T177.mp4": {
+      "video_path": "D:\\HIT\\CUPT\\Flipo_Flip\\Vedio_Analysis\\02_Videos\\Experiments\\Red\\Red_D45_T177.mp4",
+      "calibration_frame_index": 2346,
+      "point1": [
+        260,
+        697
+      ],
+      "point2": [
+        255,
+        968
+      ],
+      "distance_mm": 50.0,
+      "pixel_distance": 271.0461120605469,
+      "k_mm_per_pixel": 0.1844704564101288
+    },
+    "D:\\HIT\\CUPT\\Flipo_Flip\\Vedio_Analysis\\02_Videos\\Experiments\\Red\\Red_D60_T177.mp4": {
+      "video_path": "D:\\HIT\\CUPT\\Flipo_Flip\\Vedio_Analysis\\02_Videos\\Experiments\\Red\\Red_D60_T177.mp4",
+      "calibration_frame_index": 2346,
+      "point1": [
+        260,
+        697
+      ],
+      "point2": [
+        255,
+        968
+      ],
+      "distance_mm": 50.0,
+      "pixel_distance": 271.0461120605469,
+      "k_mm_per_pixel": 0.1844704564101288
+    },
+    "D:\\HIT\\CUPT\\Flipo_Flip\\Vedio_Analysis\\02_Videos\\Experiments\\Red\\Red_D75_T177.mp4": {
+      "video_path": "D:\\HIT\\CUPT\\Flipo_Flip\\Vedio_Analysis\\02_Videos\\Experiments\\Red\\Red_D75_T177.mp4",
+      "calibration_frame_index": 2346,
+      "point1": [
+        260,
+        697
+      ],
+      "point2": [
+        255,
+        968
+      ],
+      "distance_mm": 50.0,
+      "pixel_distance": 271.0461120605469,
+      "k_mm_per_pixel": 0.1844704564101288
+    },
+    "D:\\HIT\\CUPT\\Flipo_Flip\\Vedio_Analysis\\02_Videos\\Experiments\\Green\\Green_D75.mp4": {
+      "video_path": "D:\\HIT\\CUPT\\Flipo_Flip\\Vedio_Analysis\\02_Videos\\Experiments\\Green\\Green_D75.mp4",
+      "calibration_frame_index": 2346,
+      "point1": [
+        260,
+        697
+      ],
+      "point2": [
+        255,
+        968
+      ],
+      "distance_mm": 50.0,
+      "pixel_distance": 271.0461120605469,
+      "k_mm_per_pixel": 0.1844704564101288
+    }
+  },
+  "last_calibration": {
+    "video_path": "D:\\HIT\\CUPT\\Flipo_Flip\\Vedio_Analysis\\02_Videos\\Experiments\\Green\\Green_D75.mp4",
+    "calibration_frame_index": 2346,
+    "point1": [
+      260,
+      697
+    ],
+    "point2": [
+      255,
+      968
+    ],
+    "distance_mm": 50.0,
+    "pixel_distance": 271.0461120605469,
+    "k_mm_per_pixel": 0.1844704564101288
+  },
+  "energy_specs": {
+    "defaults": {
+      "height_mm": 50.0,
+      "width_mm": 50.0,
+      "mass_g": 1000.0,
+      "y_top_mm": 25.0,
+      "gravity_m_s2": 9.81
+    },
+    "sources": {
+      "Red_D45_T177_raw_data": {
+        "thickness_mm": 177.0,
+        "mass_g": 1000.0,
+        "height_mm": 50.0,
+        "width_mm": 50.0,
+        "y_top_mm": 97.35,
+        "gravity_m_s2": 9.81
+      },
+      "Green_D75_raw_data": {
+        "thickness_mm": 50.0,
+        "mass_g": 1000.0,
+        "height_mm": 50.0,
+        "width_mm": 50.0,
+        "y_top_mm": 27.5,
+        "gravity_m_s2": 9.81
+      }
+    }
+  }
+}
