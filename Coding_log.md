@@ -57,3 +57,15 @@
 简易的镜子没有搭建，但是我已经确认，**2026-04-20**发现的问题是普适的，我在思考其真正的原因。
 
 今天又打印了几个模型，数据的步长越来越小了。有空仿真部分也要继续做起来，这样就是双向验证。
+
+## 2026-04-25
+
+简单的OpenCV很难识别清楚蓝色的Flipo Flip，我用了一系列手段调色，目前得到了一个勉强可以满意的结果。
+
+**[Blue_Video_Analysis_Workflow.md](./Video_Analysis/Blue_Video_Analysis_Workflow.md)** 中，详尽地展示了调色的工作原理，再做了这样的修改后，蓝色的Flipo Flip的识别，已经基本可以满意。
+
+下一步希望进行解空间的构建。探究H,X,L对其滚动状态的影响。
+
+最终的调色结果见：
+
+**[工作流示意图](./Video_Analysis/04_Code/Blue_Video_Analysis/blue_workflow_contact_sheet.png)**

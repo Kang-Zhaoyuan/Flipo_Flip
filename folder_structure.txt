@@ -267,7 +267,7 @@ Simulation
                         sweep_summary_merged.csv
     plan.md
     requirements.txt
-Vedio_Analysis
+Video_Analysis
     01_Data
             Processed
                         Green_D015_T16.250_L03.071_W09.87_raw_data_analysis_metrics.csv
@@ -605,6 +605,16 @@ Vedio_Analysis
                         Green_D015_T16.250_L03.071_W09.87_raw_data_cleaned_segment_08.jpg
     02_Videos
             Experiments
+                        Blue
+                                        Blue_D045_T16.250_L02.13169_W16.65.mp4
+                                        Blue_D045_T16.500_L02.16448_W16.74.mp4
+                                        Blue_D045_T16.800_L02.20384_W17.14.mp4
+                                        Blue_D045_T17.100_L02.24319_W17.35.mp4
+                                        Blue_D045_T17.400_L02.28255_W17.51.mp4
+                                        Blue_Learning_Example_01.mp4
+                                        Blue_Learning_Example_02.mp4
+                                        tree
+                                        treefile.txt
                         Green
                                         Green_D015_T16.250_L03.071_W09.87.mp4
                                         Green_filelist.txt
@@ -626,8 +636,14 @@ Vedio_Analysis
                                         Red_D60_T177.mp4
                                         Red_D75_T177.mp4
                         Test
+                                        Blue_D045_T16.800_L02.20384_W17.14.mp4
                         White
                                         White_D75.mp4
+                        flipo_tracking_pipeline.png
+                        flipo_tracking_v2.png
+                        Flipo_v5_all_frames.png
+                        flipo_v6_all_frames.png
+                        Gemini_µ÷É«Óë°×ÏßµÄÊ¶±ð.png
             Raw_Footage
                         VID_20260414_194404.mp4
                         VID_20260414_225054_HSR_240.mp4
@@ -823,6 +839,95 @@ Vedio_Analysis
                         Red_D75_T177_raw_data_segments_summary.png
             Reports
     04_Code
+            Blue_Video_Analysis
+                        blue_workflow_debug
+                                        frame_01
+                                                            01_original.png
+                                                            02_clahe.png
+                                                            03_blue_mask.png
+                                                            04_morphology.png
+                                                            05_cc_reject.png
+                                                            06_thickness_fix.png
+                                                            07_white_mask.png
+                                                            08_final.png
+                                        frame_02
+                                                            01_original.png
+                                                            02_clahe.png
+                                                            03_blue_mask.png
+                                                            04_morphology.png
+                                                            05_cc_reject.png
+                                                            06_thickness_fix.png
+                                                            07_white_mask.png
+                                                            08_final.png
+                                        frame_03
+                                                            01_original.png
+                                                            02_clahe.png
+                                                            03_blue_mask.png
+                                                            04_morphology.png
+                                                            05_cc_reject.png
+                                                            06_thickness_fix.png
+                                                            07_white_mask.png
+                                                            08_final.png
+                                        frame_04
+                                                            01_original.png
+                                                            02_clahe.png
+                                                            03_blue_mask.png
+                                                            04_morphology.png
+                                                            05_cc_reject.png
+                                                            06_thickness_fix.png
+                                                            07_white_mask.png
+                                                            08_final.png
+                                        frame_05
+                                                            01_original.png
+                                                            02_clahe.png
+                                                            03_blue_mask.png
+                                                            04_morphology.png
+                                                            05_cc_reject.png
+                                                            06_thickness_fix.png
+                                                            07_white_mask.png
+                                                            08_final.png
+                                        frame_06
+                                                            01_original.png
+                                                            02_clahe.png
+                                                            03_blue_mask.png
+                                                            04_morphology.png
+                                                            05_cc_reject.png
+                                                            06_thickness_fix.png
+                                                            07_white_mask.png
+                                                            08_final.png
+                                        frame_07
+                                                            01_original.png
+                                                            02_clahe.png
+                                                            03_blue_mask.png
+                                                            04_morphology.png
+                                                            05_cc_reject.png
+                                                            06_thickness_fix.png
+                                                            07_white_mask.png
+                                                            08_final.png
+                                        frame_08
+                                                            01_original.png
+                                                            02_clahe.png
+                                                            03_blue_mask.png
+                                                            04_morphology.png
+                                                            05_cc_reject.png
+                                                            06_thickness_fix.png
+                                                            07_white_mask.png
+                                                            08_final.png
+                        blue_workflow_contact_sheet.png
+                        blue_workflow_feasibility_report.md
+                        flipo_tracking_pipeline.png
+                        flipo_tracking_v2.png
+                        Flipo_v5_all_frames.png
+                        flipo_v6_all_frames.png
+                        Gemini_µ÷É«Óë°×ÏßµÄÊ¶±ð.png
+                        reproduce_blue_workflow.py
+                        ÆÁÄ»½ØÍ¼ 2026-04-24 212710.png
+                        ÆÁÄ»½ØÍ¼ 2026-04-24 222240.png
+                        ÆÁÄ»½ØÍ¼ 2026-04-24 222329.png
+                        ÆÁÄ»½ØÍ¼ 2026-04-24 222417.png
+                        ÆÁÄ»½ØÍ¼ 2026-04-24 223009.png
+                        ÆÁÄ»½ØÍ¼ 2026-04-24 223022.png
+                        ÆÁÄ»½ØÍ¼ 2026-04-24 223035.png
             scripts
                         Video_Analysi_Code
                                         archive
@@ -836,10 +941,12 @@ Vedio_Analysis
                                                             calibration_workflow.cpython-311.pyc
                                                             clean_roll_intervals.cpython-311.pyc
                                                             color_learning.cpython-311.pyc
+                                                            color_ml.cpython-311.pyc
                                                             color_profiles.cpython-311.pyc
                                                             csv_paths.cpython-311.pyc
                                                             estimate_dark_red_hsv.cpython-311.pyc
                                                             flipo_flip_tracker.cpython-311.pyc
+                                                            naming_spec.cpython-311.pyc
                                                             path_registry.cpython-311.pyc
                                                             tracker_detection.cpython-311.pyc
                                                             tracker_geometry.cpython-311.pyc
@@ -855,11 +962,13 @@ Vedio_Analysis
                                         calibration_workflow.py
                                         clean_roll_intervals.py
                                         color_learning.py
+                                        color_ml.py
                                         color_profiles.py
                                         csv_paths.py
                                         estimate_dark_red_hsv.py
                                         flipo_flip_tracker.py
                                         flip_data_visualize.py
+                                        naming_spec.py
                                         path_registry.py
                                         tracker_detection.py
                                         tracker_geometry.py
@@ -870,6 +979,7 @@ Vedio_Analysis
                                         tracker_state.py
                                         visualize_raw_coords.py
                                         __init__.py
+            flipo_flip_tracker_´úÂë¿é¹¦ÄÜËµÃ÷.md
             requirements.txt
     05_Metadata
             logs
@@ -956,6 +1066,7 @@ Vedio_Analysis
             IYPT 2026 - 6. Flipo flip [0VQAyx1AZBM].mp4
     __pycache__
             main.cpython-311.pyc
+    Blue_Video_Analysis_Workflow.md
     FLIPO_FLIP_NAMING_SPEC.md
     main.py
     requirements.txt
@@ -964,3 +1075,4 @@ Click_me_to_refresh_filetree.bat
 Coding_log.md
 folder_structure.txt
 readme.md
+requirements.txt
