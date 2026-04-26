@@ -26,6 +26,151 @@ def clean_binary_mask(mask: np.ndarray, kernel_size: int) -> np.ndarray:
     return closed
 
 
+def _apply_blue_clahe(frame_bgr: np.ndarray) -> np.ndarray:
+    lab_image = cv2.cvtColor(frame_bgr, cv2.COLOR_BGR2LAB)
+    light_channel, a_channel, b_channel = cv2.split(lab_image)
+    clahe = cv2.createCLAHE(clipLimit=3.0, tileGridSize=(8, 8))
+    light_enhanced = clahe.apply(light_channel)
+    return cv2.cvtColor(cv2.merge([light_enhanced, a_channel, b_channel]), cv2.COLOR_LAB2BGR)
+
+
+def _detect_ground_line(frame_bgr: np.ndarray) -> int:
+    height = frame_bgr.shape[0]
+    gray_image = cv2.cvtColor(frame_bgr, cv2.COLOR_BGR2GRAY)
+    edge_image = cv2.Canny(gray_image, 30, 100)
+    search_top = int(height * 0.60)
+    row_strength = np.sum(edge_image[search_top:, :], axis=1)
+    if row_strength.size == 0 or int(np.max(row_strength)) <= 0:
+        return int(height * 0.92)
+    return search_top + int(np.argmax(row_strength))
+
+
+def _build_blue_mask(enhanced_bgr: np.ndarray) -> np.ndarray:
+    hsv_image = cv2.cvtColor(enhanced_bgr, cv2.COLOR_BGR2HSV)
+    lower_blue = np.array([85, 40, 40], dtype=np.uint8)
+    upper_blue = np.array([140, 255, 255], dtype=np.uint8)
+    return cv2.inRange(hsv_image, lower_blue, upper_blue)
+
+
+def _solidify_and_cut(mask: np.ndarray) -> np.ndarray:
+    close_kernel = np.ones((7, 7), np.uint8)
+    erode_kernel = np.ones((5, 5), np.uint8)
+    solid_mask = cv2.morphologyEx(mask, cv2.MORPH_CLOSE, close_kernel)
+    eroded_mask = cv2.erode(solid_mask, erode_kernel, iterations=3)
+    return cv2.dilate(eroded_mask, erode_kernel, iterations=3)
+
+
+def _reject_ground_components(mask: np.ndarray, ground_y: int) -> np.ndarray:
+    ground_tolerance = 15
+    thin_limit = 30
+    aspect_limit = 6.0
+
+    component_count, labels, statistics, _ = cv2.connectedComponentsWithStats(mask)
+    kept_mask = np.zeros_like(mask)
+
+    for component_index in range(1, component_count):
+        x_pos, y_pos, width, height, area = statistics[component_index, :5]
+        if area < 100:
+            continue
+
+        bottom_edge = y_pos + height
+        aspect_ratio = width / max(height, 1)
+        near_ground = bottom_edge >= ground_y - ground_tolerance
+        is_thin = height < thin_limit
+        is_wide = aspect_ratio > aspect_limit
+
+        if not (near_ground and is_thin and is_wide):
+            kept_mask[labels == component_index] = 255
+
+    return kept_mask
+
+
+def _strip_thin_extensions(blob_mask: np.ndarray, min_thickness: int) -> np.ndarray:
+    cleaned_mask = blob_mask.copy()
+
+    column_fill = np.sum(cleaned_mask > 0, axis=0)
+    cleaned_mask[:, column_fill < min_thickness] = 0
+
+    row_fill = np.sum(cleaned_mask > 0, axis=1)
+    cleaned_mask[row_fill < min_thickness, :] = 0
+
+    return cleaned_mask
+
+
+def _detect_blue_object(
+    frame_bgr: np.ndarray,
+    params: TrackerParams,
+    search_roi: Optional[Tuple[int, int, int, int]] = None,
+) -> PinkDetection:
+    enhanced_bgr = _apply_blue_clahe(frame_bgr)
+    blue_mask = _build_blue_mask(enhanced_bgr)
+    morph_mask = _solidify_and_cut(blue_mask)
+
+    ground_y = (
+        int(params.blue_ground_y)
+        if params.blue_ground_y is not None
+        else _detect_ground_line(frame_bgr)
+    )
+    kept_mask = _reject_ground_components(morph_mask, ground_y)
+
+    contour_candidates, _ = cv2.findContours(
+        kept_mask,
+        cv2.RETR_EXTERNAL,
+        cv2.CHAIN_APPROX_SIMPLE,
+    )
+    contour_candidates = [
+        contour for contour in contour_candidates if cv2.contourArea(contour) > 200
+    ]
+    if not contour_candidates:
+        return PinkDetection(False, (np.nan, np.nan), None, np.nan)
+
+    largest_contour = max(contour_candidates, key=cv2.contourArea)
+    single_blob_mask = np.zeros_like(kept_mask)
+    cv2.drawContours(single_blob_mask, [largest_contour], -1, 255, -1)
+
+    min_dim = min(frame_bgr.shape[:2])
+    thickness_ratio = max(0.01, float(params.blue_min_thickness_ratio))
+    min_thickness = max(28, int(min_dim * thickness_ratio))
+
+    stripped_core = _strip_thin_extensions(single_blob_mask, min_thickness)
+    stripped_core = cv2.morphologyEx(
+        stripped_core,
+        cv2.MORPH_CLOSE,
+        np.ones((5, 5), np.uint8),
+        iterations=2,
+    )
+
+    if search_roi is not None:
+        clipped = _clip_roi_to_frame(search_roi, stripped_core.shape[:2])
+        if clipped is None:
+            return PinkDetection(False, (np.nan, np.nan), None, np.nan)
+        x, y, w, h = clipped
+        roi_mask = np.zeros(stripped_core.shape, dtype=np.uint8)
+        roi_mask[y : y + h, x : x + w] = 255
+        stripped_core = cv2.bitwise_and(stripped_core, roi_mask)
+
+    contours, _ = cv2.findContours(stripped_core, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    contours = [contour for contour in contours if cv2.contourArea(contour) > 200]
+    if not contours:
+        return PinkDetection(False, (np.nan, np.nan), None, np.nan)
+
+    contour = max(contours, key=cv2.contourArea)
+    pink_area = float(cv2.contourArea(contour))
+    if pink_area < params.pink_min_area:
+        return PinkDetection(False, (np.nan, np.nan), None, np.nan)
+
+    moments = cv2.moments(contour)
+    if moments["m00"] <= 1e-9:
+        x, y, w, h = cv2.boundingRect(contour)
+        cx = float(x + w / 2.0)
+        cy = float(y + h / 2.0)
+    else:
+        cx = float(moments["m10"] / moments["m00"])
+        cy = float(moments["m01"] / moments["m00"])
+
+    return PinkDetection(True, (cx, cy), contour, pink_area)
+
+
 def _clip_roi_to_frame(
     roi_xywh: Tuple[int, int, int, int],
     frame_shape: Tuple[int, int],
@@ -84,7 +229,11 @@ def detect_pink_object(
     hsv: np.ndarray,
     params: TrackerParams,
     search_roi: Optional[Tuple[int, int, int, int]] = None,
+    frame_bgr: Optional[np.ndarray] = None,
 ) -> PinkDetection:
+    if params.color_name == "blue" and frame_bgr is not None:
+        return _detect_blue_object(frame_bgr, params, search_roi)
+
     if params.color_name == "dark_red" and isinstance(params.red_ml_model, dict):
         ml_mask = build_dark_red_ml_mask(hsv, params.red_ml_model)
 

@@ -270,6 +270,11 @@ Simulation
 Video_Analysis
     01_Data
             Processed
+                        Blue_D045_T16.250_L02.13169_W16.65_raw_data_analysis_metrics.csv
+                        Blue_D045_T16.500_L02.16448_W16.74_raw_data_analysis_metrics.csv
+                        Blue_D045_T16.800_L02.20384_W17.14_raw_data_analysis_metrics.csv
+                        Blue_D045_T17.100_L02.24319_W17.35_raw_data_analysis_metrics.csv
+                        Blue_D045_T17.400_L02.28255_W17.51_raw_data_analysis_metrics.csv
                         Green_D015_T16.250_L03.071_W09.87_raw_data_analysis_metrics.csv
                         Green_D015_T16.250_L03.071_W09.87_raw_data_cleaned_segment_01.csv
                         Green_D015_T16.250_L03.071_W09.87_raw_data_cleaned_segment_01.jpg
@@ -585,6 +590,11 @@ Video_Analysis
                         Red_D60_T177_raw_data_analysis_metrics.csv
                         Red_D75_T177_raw_data_analysis_metrics.csv
             Raw
+                        Blue_D045_T16.250_L02.13169_W16.65_raw_data.csv
+                        Blue_D045_T16.500_L02.16448_W16.74_raw_data.csv
+                        Blue_D045_T16.800_L02.20384_W17.14_raw_data.csv
+                        Blue_D045_T17.100_L02.24319_W17.35_raw_data.csv
+                        Blue_D045_T17.400_L02.28255_W17.51_raw_data.csv
                         Green_D015_T16.250_L03.071_W09.87_raw_data.csv
                         Pink_D015_T16.667_L05.000_W09.76_raw_data.csv
                         Pink_D030_T16.667_L05.000_W13.76_raw_data.csv
@@ -611,9 +621,6 @@ Video_Analysis
                                         Blue_D045_T16.800_L02.20384_W17.14.mp4
                                         Blue_D045_T17.100_L02.24319_W17.35.mp4
                                         Blue_D045_T17.400_L02.28255_W17.51.mp4
-                                        Blue_Learning_Example_01.mp4
-                                        Blue_Learning_Example_02.mp4
-                                        tree
                                         treefile.txt
                         Green
                                         Green_D015_T16.250_L03.071_W09.87.mp4
@@ -669,6 +676,11 @@ Video_Analysis
                         VID_20260417_114451_HSR_240.mp4
     03_Results
             Plots
+                        Blue_D045_T16.250_L02.13169_W16.65_raw_data_segments_summary.png
+                        Blue_D045_T16.500_L02.16448_W16.74_raw_data_segments_summary.png
+                        Blue_D045_T16.800_L02.20384_W17.14_raw_data_segments_summary.png
+                        Blue_D045_T17.100_L02.24319_W17.35_raw_data_segments_summary.png
+                        Blue_D045_T17.400_L02.28255_W17.51_raw_data_segments_summary.png
                         flip_analysis_raw_coords.png
                         flip_analysis_raw_coords_prompt_test.png
                         flip_analysis_report.png
@@ -1066,6 +1078,7 @@ Video_Analysis
             IYPT 2026 - 6. Flipo flip [0VQAyx1AZBM].mp4
     __pycache__
             main.cpython-311.pyc
+    Batch_Energy_Dissipation_Workflow.md
     Blue_Video_Analysis_Workflow.md
     FLIPO_FLIP_NAMING_SPEC.md
     main.py

@@ -283,11 +283,26 @@ def run_tracker(
         )
 
         if local_search_roi is not None:
-            pink = detect_pink_object(hsv, params, search_roi=local_search_roi)
+            pink = detect_pink_object(
+                hsv,
+                params,
+                search_roi=local_search_roi,
+                frame_bgr=frame,
+            )
             if not pink.found:
-                pink = detect_pink_object(hsv, params, search_roi=None)
+                pink = detect_pink_object(
+                    hsv,
+                    params,
+                    search_roi=None,
+                    frame_bgr=frame,
+                )
         else:
-            pink = detect_pink_object(hsv, params, search_roi=None)
+            pink = detect_pink_object(
+                hsv,
+                params,
+                search_roi=None,
+                frame_bgr=frame,
+            )
 
         centroid = pink.centroid
         green_center = pink.centroid

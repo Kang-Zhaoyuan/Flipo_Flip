@@ -8,7 +8,7 @@ from typing import Dict, List, Optional, Sequence, Tuple
 import cv2
 import numpy as np
 
-from Video_Analysi_Code.calibration_ui import select_ground_line
+from Video_Analysi_Code.calibration_ui import get_first_frame, select_ground_line
 from Video_Analysi_Code.color_ml import train_dark_red_gaussian_model
 from Video_Analysi_Code.color_profiles import (
     serialize_hsv_range,
@@ -632,7 +632,10 @@ def _collect_learning_samples_for_video(
     ground_y: Optional[int] = None
     if color_name == "blue":
         print("Calibrating ground line for blue object filtering...")
-        frame_for_ground = _get_first_frame(video_path)
+        try:
+            frame_for_ground = get_first_frame(video_path)
+        except RuntimeError:
+            frame_for_ground = None
         if frame_for_ground is not None:
             ground_y = select_ground_line(frame_for_ground)
             if ground_y is None:
@@ -861,6 +864,12 @@ def run_first_time_color_learning(
     base_params: TrackerParams,
     round_count: int = 1,
 ) -> Dict[str, object]:
+    if color_name == "blue":
+        raise RuntimeError(
+            "Blue manual learning has been removed. "
+            "Select blue and proceed directly to calibration/tracking."
+        )
+
     first_seen_at = _now_iso()
     rounds = max(1, int(round_count))
 
@@ -906,6 +915,12 @@ def run_multi_video_color_learning(
     base_params: TrackerParams,
     round_count: int = 8,
 ) -> Dict[str, object]:
+    if color_name == "blue":
+        raise RuntimeError(
+            "Blue manual learning has been removed. "
+            "Select blue and proceed directly to calibration/tracking."
+        )
+
     if not video_paths:
         raise RuntimeError("No learning videos were provided.")
 

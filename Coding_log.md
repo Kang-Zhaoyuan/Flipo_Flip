@@ -69,3 +69,13 @@
 最终的调色结果见：
 
 **[工作流示意图](./Video_Analysis/04_Code/Blue_Video_Analysis/blue_workflow_contact_sheet.png)**
+
+## 2026-04-26
+
+经过人眼验证，发现即使使用调色、滤波等算法，依旧难以稳定地识别蓝色的Flipo Flip，这意味着两天的工作完全废了，唯一有用的是 **[这张看上去很高端的图片](./Video_Analysis/04_Code/Blue_Video_Analysis/blue_workflow_contact_sheet.png)**  ，我应当立刻重新使用绿色打印新的3D模型，注意命名即可。及时止损。
+
+针对能量耗散问题，打算从两个方面来研究：
+
+* 引入弹性势能的度量，可以避免"凹陷"的情况
+* 引入能量耗散系数，解释能量峰左右不均匀的问题
+

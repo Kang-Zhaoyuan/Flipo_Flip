@@ -21,7 +21,6 @@ from Video_Analysi_Code.calibration_ui import (
 from Video_Analysi_Code.calibration_workflow import choose_calibration
 from Video_Analysi_Code.color_learning import (
     run_first_time_color_learning,
-    run_multi_video_color_learning,
 )
 from Video_Analysi_Code.color_profiles import (
     build_tracker_params_for_color,
@@ -42,11 +41,6 @@ from Video_Analysi_Code.tracker_pipeline import run_tracker
 
 DEFAULT_PARALLEL_WORKERS = 4
 _WORKER_DEVNULL = None
-BLUE_REFERENCE_LEARNING_FILES = (
-    "Blue_Learning_Example_01.mp4",
-    "Blue_Learning_Example_02.mp4",
-)
-BLUE_REFERENCE_ROUNDS_PER_VIDEO = 16
 
 
 def _silence_worker_streams() -> None:
@@ -79,20 +73,6 @@ def _track_one_video(
     df.to_csv(output_csv_path, index=False)
 
     return video_path_obj.name, params.color_name, len(df), str(output_csv_path)
-
-
-def _resolve_blue_learning_videos(project_root: Path) -> List[str]:
-    blue_dir = project_root / "02_Videos" / "Experiments" / "Blue"
-    if not blue_dir.exists() or not blue_dir.is_dir():
-        return []
-
-    resolved: List[str] = []
-    for filename in BLUE_REFERENCE_LEARNING_FILES:
-        candidate = blue_dir / filename
-        if candidate.exists() and candidate.is_file():
-            resolved.append(str(candidate))
-
-    return resolved
 
 
 def main() -> None:
@@ -137,7 +117,7 @@ def main() -> None:
         color_name = prompt_flipo_color(video_path)
 
         should_learn_color = False
-        if color_name != "pink":
+        if color_name not in {"pink", "blue"}:
             already_learned = is_color_learned(profile_payload, color_name)
             if already_learned:
                 cached_decision = relearn_decision_by_color.get(color_name)
@@ -160,37 +140,12 @@ def main() -> None:
                 "before tracking."
             )
             try:
-                if color_name == "blue":
-                    blue_learning_videos = _resolve_blue_learning_videos(project_root)
-                    if len(blue_learning_videos) >= 2:
-                        print(
-                            "Using dedicated blue learning examples for multi-video "
-                            "aggregation (high precision mode)."
-                        )
-                        learned_profile = run_multi_video_color_learning(
-                            video_paths=blue_learning_videos,
-                            color_name=color_name,
-                            base_params=base_params,
-                            round_count=BLUE_REFERENCE_ROUNDS_PER_VIDEO,
-                        )
-                    else:
-                        print(
-                            "Blue learning examples are missing. Falling back to current "
-                            "video with multi-frame learning."
-                        )
-                        learned_profile = run_first_time_color_learning(
-                            video_path=video_path,
-                            color_name=color_name,
-                            base_params=base_params,
-                            round_count=BLUE_REFERENCE_ROUNDS_PER_VIDEO,
-                        )
-                else:
-                    learned_profile = run_first_time_color_learning(
-                        video_path=video_path,
-                        color_name=color_name,
-                        base_params=base_params,
-                        round_count=1,
-                    )
+                learned_profile = run_first_time_color_learning(
+                    video_path=video_path,
+                    color_name=color_name,
+                    base_params=base_params,
+                    round_count=1,
+                )
             except RuntimeError as exc:
                 print(f"[SKIP] {video_path_obj.name}: {exc}")
                 relearn_decision_by_color[color_name] = False

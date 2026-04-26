@@ -51,7 +51,7 @@ class TrackerParams:
     white_line_learning_s_cap: int = 70
     white_line_learning_v_floor: int = 180
     blue_ground_y: Optional[int] = None  # Ground Y coordinate for blue object filtering
-    blue_min_thickness_ratio: float = 0.1  # Minimum thickness ratio for blue objects (height/width)
+    blue_min_thickness_ratio: float = 0.06  # Minimum thickness ratio for blue objects (height/width)
     wait_key_ms: int = 1
 
     @property
